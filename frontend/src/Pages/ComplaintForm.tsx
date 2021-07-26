@@ -65,7 +65,7 @@ const Form = () => {
   return (
     <>
       <h1>Don't hold back</h1>
-      <form>
+      <form onSubmit={onSubmitForm}>
         <Fieldset>
           <FormHeader
             onHandleFormElement={onHandleFormElement}
@@ -88,7 +88,6 @@ const Form = () => {
         <Button
           type="submit"
           btnType="primary"
-          onClick={onSubmitForm}
           disabled={isSaving}
         >
           Submit
