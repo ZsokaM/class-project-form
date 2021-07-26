@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { AxiosReportersApi } from "../utils/AxiosReporterApi";
+import { AxiosReportersApi, AxiosComplaintApi } from "../utils/AxiosApis";
 import Fieldset from "../components/Form/Fieldset";
 import FormHeader from "../components/Form/FormHeader";
 import Button from "../components/Button";
@@ -29,7 +29,7 @@ const Form = () => {
     event.preventDefault();
     try {
       setIsSaving((prevState) => !prevState);
-      await axios.post("http://localhost:5050/complaints", { form });
+      await AxiosComplaintApi.post("complaints", { form });
       setIsSaving((prevState) => !prevState);
       setIsSuccess(true);
       setTimeout(() => {
