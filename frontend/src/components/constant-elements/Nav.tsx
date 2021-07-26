@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { myContext } from "../Context";
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
+import { AxiosUserApi } from "../../utils/AxiosApis";
 
 const Navbar = () => {
   const context = useContext(myContext);
 
   const logout = () => {
-    axios
-      .get("http://localhost:5050/logout", {
+    AxiosUserApi.get("logout",  {
         withCredentials: true,
       })
       .then((res: AxiosResponse) => {
