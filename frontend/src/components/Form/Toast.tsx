@@ -1,10 +1,9 @@
 import React, { FC } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 interface iToast {
   type: string;
   isActive?: boolean;
-  isVisible?: boolean;
 }
 const Toast: FC<iToast> = ({ type, isActive, children }) => {
   return (
@@ -14,23 +13,14 @@ const Toast: FC<iToast> = ({ type, isActive, children }) => {
   );
 };
 
-const Container = styled.section`
+const Container = styled.section<{ isVisible?: boolean; type: string }>`
   position: fixed;
   width: 100%;
   padding: 20px;
   text-align: center;
   color: white;
   background-color: orange;
-  ${(p: iToast) =>
-    p.isVisible &&
-    css`
-      top: 0;
-    `};
-  ${(p: iToast) =>
-    !p.isVisible &&
-    css`
-      top: -100%;
-    `};
+  top: ${({ isVisible }) => (isVisible ? 0 : "-100%")};
 `;
 
 export default Toast;
