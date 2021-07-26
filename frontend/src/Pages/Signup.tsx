@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import Fieldset from "../components/Form/Fieldset";
 import FormInput from "../components/Form/FormInput";
 import Button from "../components/Button";
+import { AxiosUserApi } from "../utils/AxiosApis";
 
 export default function Signup() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const signup = () => {
-    axios
-      .post(
-        "http://localhost:5050/signup",
+    AxiosUserApi.post(
+      "signup",
         {
           username,
           password,
