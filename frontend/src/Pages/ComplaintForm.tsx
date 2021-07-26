@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { AxiosReportersApi, AxiosComplaintApi } from "../utils/AxiosApis";
 import Fieldset from "../components/Form/Fieldset";
 import FormHeader from "../components/Form/FormHeader";
