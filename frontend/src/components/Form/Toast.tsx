@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 interface iToast {
   type: string;
   isActive?: boolean;
-  children?: React.ReactNode;
   isVisible?: boolean;
 }
 const Toast: FC<iToast> = ({ type, isActive, children }) => {
