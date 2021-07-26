@@ -43,7 +43,7 @@ router.get("/user", (req, res) => {
 	res.send(req.user);
 });
 
-router.post("/deleteuser", async (req, res) => {
+router.post("/delete", async (req, res) => {
 	const { id } = req?.body;
 	await User.findByIdAndDelete(id, (err: Error) => {
 		if (err) throw err;
