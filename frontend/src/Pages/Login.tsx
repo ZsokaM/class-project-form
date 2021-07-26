@@ -35,23 +35,26 @@ export default function Login() {
   return (
     <>
       <h1>Login</h1>
-      <Fieldset>
-        <FormInput
-          label="Username"
-          required="required"
-          placeholder="username"
-          onHandleFormElement={(e) => setUsername(e.target.value)}
-        />
-        <FormInput
-          label="Password"
-          required="required"
-          placeholder="password"
-          onHandleFormElement={(e) => setPassword(e.target.value)}
-        />
-        <Button type="submit" btnType="primary" onClick={login}>
-          Submit
-        </Button>
-      </Fieldset>
+      <form onSubmit={login}>
+        <Fieldset>
+          <FormInput
+            label="Username"
+            required="required"
+            placeholder="username"
+            onHandleFormElement={(e) => setUsername(e.target.value)}
+          />
+          <FormInput
+            label="Password"
+            required="required"
+            placeholder="password"
+            type="password"
+            onHandleFormElement={(e) => setPassword(e.target.value)}
+          />
+          <Button type="submit" btnType="primary">
+            Submit
+          </Button>
+        </Fieldset>
+      </form>
     </>
   );
 }
