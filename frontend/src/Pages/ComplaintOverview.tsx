@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "../components/Card";
+import { AxiosComplaintApi } from "../utils/AxiosApis";
 
 interface iCard {
   _id: string;
@@ -16,7 +17,7 @@ const CardOverview = () => {
 
   useEffect(() => {
     async function fetchComplaints() {
-      const result = await axios.get("http://localhost:5050/complaints");
+      const result = await AxiosComplaintApi.get("complaints");
       setComps(result.data);
     }
     fetchComplaints();
