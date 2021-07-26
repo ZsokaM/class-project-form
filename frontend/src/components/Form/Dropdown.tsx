@@ -3,7 +3,7 @@ import styled from "styled-components";
 import React, { FC } from "react";
 
 interface iDropDown {
-  users: [];
+  users: iUser[];
   onHandleFormElement: React.ChangeEventHandler<HTMLSelectElement>;
 }
 
