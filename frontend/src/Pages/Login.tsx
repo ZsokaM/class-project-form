@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios, { AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import Fieldset from "../components/Form/Fieldset";
 import FormInput from "../components/Form/FormInput";
 import Button from "../components/Button";
