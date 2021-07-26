@@ -30,24 +30,26 @@ export default function Signup() {
   return (
     <>
       <h1>Register</h1>
-      <Fieldset>
-        <FormInput
-          label="Username"
-          required="required"
-          placeholder="username"
-          onHandleFormElement={(e) => setUsername(e.target.value)}
-        />
-        <FormInput
-          label="Password"
-          type="password"
-          required="required"
-          placeholder="password"
-          onHandleFormElement={(e) => setPassword(e.target.value)}
-        />
-        <Button type="submit" btnType="primary" onClick={signup}>
-          Signup
-        </Button>
-      </Fieldset>
+      <form onSubmit={signup}>
+        <Fieldset>
+          <FormInput
+            label="Username"
+            required="required"
+            placeholder="username"
+            onHandleFormElement={(e) => setUsername(e.target.value)}
+          />
+          <FormInput
+            label="Password"
+            type="password"
+            required="required"
+            placeholder="password"
+            onHandleFormElement={(e) => setPassword(e.target.value)}
+          />
+          <Button type="submit" btnType="primary">
+            Signup
+          </Button>
+        </Fieldset>
+      </form>
     </>
   );
 }
