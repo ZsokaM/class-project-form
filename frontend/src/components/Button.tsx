@@ -4,7 +4,7 @@ import styled from "styled-components";
 interface Ibutton {
   btnType?: "primary" | "secondary" | "simple";
   type?: "button" | "submit";
-  onClick?: any;
+  onClick?: ()=>void;
   disabled?: boolean;
 }
 
