@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 const Home = () => {
   return (
-    <>
       <Header1>Iron Hack Complaints Form</Header1>
-    </>
   );
 };
 
