@@ -34,7 +34,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    
       <ThemeProvider theme={themeMode}>
         <GlobalStyles />
         <Router>
@@ -72,7 +72,7 @@ function App() {
           <Footer />
         </Router>
       </ThemeProvider>
-    </>
+    
   );
 }
 
