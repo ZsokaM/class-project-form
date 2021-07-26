@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 interface IFieldsetProps {
   title?: string;
-  children?: React.ReactNode;
 }
 const Fieldset: FC<IFieldsetProps> = ({ title, children }) => {
   return (
