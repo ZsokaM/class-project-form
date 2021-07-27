@@ -9,7 +9,8 @@ export default function Signup() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const signup = () => {
+  const signup = (event:any) => {
+    event.preventDefault();
     AxiosUserApi.post(
       "signup",
         {
