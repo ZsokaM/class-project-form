@@ -8,7 +8,7 @@ import { AxiosUserApi } from "../../utils/AxiosApis";
 const Navbar = () => {
   const userIsLoggedIn = useContext(myContext);
   
-  const logout = (event: any) => {
+  const logout = (event: React.SyntheticEvent) => {
     event.preventDefault();
     AxiosUserApi.get("logout", {
       withCredentials: true,
