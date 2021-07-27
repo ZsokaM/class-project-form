@@ -24,14 +24,14 @@ router.post("/signup", async (req, res) => {
           password: hashedPassword,
         });
         await newUser.save();
-        res.status(201).send("success");
+        res.status(201).send("User signed up");
       }
     }
   );
 });
 
 router.post("/login", passport.authenticate("local"), (req, res) => {
-  res.status(200).send("success");
+  res.status(200).send("User is logged in");
 });
 
 router.get("/user", (req, res) => {
@@ -43,13 +43,12 @@ router.post("/delete", async (req, res) => {
   await User.findByIdAndDelete(id, (err: Error) => {
     if (err) throw err;
   });
-  res.status(200).send("success");
+  res.status(200).send("User is deleted");
 });
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.status(200).send("success");
+  res.status(200).send("User logged out");
 });
 
 module.exports = router;
-
