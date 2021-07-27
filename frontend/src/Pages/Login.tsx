@@ -23,7 +23,7 @@ export default function Login() {
       )
       .then(
         (res: AxiosResponse) => {
-          if (res.data === "success") {
+          if (res.status === 200) {
             window.location.href = "/form";
           }
         },
