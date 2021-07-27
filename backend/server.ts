@@ -69,7 +69,7 @@ passport.use(
 				if (!user) return done(null, false);
 				bcrypt.compare(password, user.password, (err, result: boolean) => {
 					if (err) throw err;
-					if (result === true) {
+					if (result) {
 						return done(null, user);
 					} else {
 						return done(null, false);
