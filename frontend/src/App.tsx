@@ -14,7 +14,7 @@ import Signup from "./Pages/Signup";
 import { userContext } from "./components/Context";
 
 function App() {
-  const context = useContext(userContext);
+  const userIsLoggedIn = useContext(userContext);
   const [theme, setTheme] = useState<string>("light");
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
@@ -45,7 +45,7 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              {context ? (
+              {userIsLoggedIn ? (
                 <>
                   <Route path="/form">
                     <Form />
