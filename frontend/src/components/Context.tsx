@@ -10,7 +10,7 @@ import { UserInterface } from "../utils/Interfaces";
 
 export const userContext = createContext<Partial<UserInterface>>({});
 
-export default function Context(props: PropsWithChildren<any>) {
+export default function Context(props: any) {
   const [user, setUser] = useState<UserInterface>();
 
   useEffect(() => {
