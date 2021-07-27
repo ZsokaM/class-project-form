@@ -7,9 +7,8 @@ const Home = () => {
 };
 
 const Header1 = styled.h1`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  height: 80vh;
 `;
 export default Home;
