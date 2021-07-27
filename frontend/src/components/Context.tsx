@@ -8,7 +8,7 @@ import Axios, { AxiosResponse } from "axios";
 import { AxiosUserApi } from "../utils/AxiosApis";
 import { UserInterface } from "../utils/Interfaces";
 
-export const myContext = createContext<Partial<UserInterface>>({});
+export const userContext = createContext<Partial<UserInterface>>({});
 
 export default function Context(props: PropsWithChildren<any>) {
   const [user, setUser] = useState<UserInterface>();
@@ -22,6 +22,6 @@ export default function Context(props: PropsWithChildren<any>) {
   }, []);
 
   return (
-    <myContext.Provider value={user!}>{props.children}</myContext.Provider>
+    <userContext.Provider value={user!}>{props.children}</userContext.Provider>
   );
 }
