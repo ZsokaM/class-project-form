@@ -7,16 +7,16 @@ import { AxiosUserApi } from "../../utils/AxiosApis";
 
 const Navbar = () => {
   const userIsLoggedIn = useContext(myContext);
-
-  const logout = () => {
-    AxiosUserApi.get("logout",  {
-        withCredentials: true,
-      })
-      .then((res: AxiosResponse) => {
-        if (res.data === "success") {
-          window.location.href = "/";
-        }
-      });
+  
+  const logout = (event: any) => {
+    event.preventDefault();
+    AxiosUserApi.get("logout", {
+      withCredentials: true,
+    }).then((res: AxiosResponse) => {
+      if (res.status === 200) {
+        window.location.href = "/";
+      }
+    });
   };
 
   return (
