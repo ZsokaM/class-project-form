@@ -12,24 +12,23 @@ router.get("/complaints", async (req, res) => {
 });
 
 router.post("/complaints", async (req, res) => {
-	try {
-		const { title, caseId, description, reporter, priority } = req.body.form;
+  const { title, caseId, description, reporter, priority } = req.body.form;
+  try {
+    const complaint = await Complaint.create({
+      title,
+      caseId,
+      description,
+      reporter,
+      priority,
+    });
 
-		const complaint = await Complaint.create({
-			title,
-			caseId,
-			description,
-			reporter,
-			priority,
-		});
-
-		return res.status(201).json({
-			success: true,
-			data: complaint,
-		});
-	} catch (err) {
-		console.log(err);
-	}
+    return res.status(201).json({
+      success: true,
+      data: complaint,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 module.exports = router;
