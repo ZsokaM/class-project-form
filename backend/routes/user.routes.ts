@@ -7,13 +7,8 @@ const User = require("../models/User");
 import { DatabaseUserInterface } from "../utils/Interfaces";
 
 router.post("/signup", async (req, res) => {
-	const { username, password } = req?.body;
-	if (
-		!username ||
-		!password ||
-		typeof username !== "string" ||
-		typeof password !== "string"
-	) {
+	const { username, password } = req.body;
+	if (!username || !password) {
 		res.send("Improper Values");
 		return;
 	}
