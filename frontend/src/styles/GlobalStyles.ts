@@ -2,17 +2,19 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 
+:root{
+  --strawberry: #f1356d;
+    --lightest: #BFD7ED;
+    --dark: #003B73;
+    --medium: #0074B7;
+    --light: #60A3D9;
+}
  
 html {
     --maxWidth: 1000px;
     --bs: 0 12px 24px 0 rgba(0,0,0,0,.09)
     box-sizing: border-box;
-    --strawberry: #f1356d;
-    --lightest: #BFD7ED;
-    --dark: #003B73;
-    --medium: #0074B7;
-    --light: #60A3D9;
-    height: 100vh;
+    height: 100%;
     padding: 0;
     margin: 0;
   }
@@ -31,7 +33,7 @@ html {
     color: ${({ theme }) => theme.color};
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
   }
 
   main {
