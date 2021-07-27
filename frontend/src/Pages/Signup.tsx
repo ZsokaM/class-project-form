@@ -22,7 +22,7 @@ export default function Signup() {
         }
       )
       .then((res: AxiosResponse) => {
-        if (res.data === "success") {
+        if (res.status === 201) {
           window.location.href = "/login";
         }
       });
