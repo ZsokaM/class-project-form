@@ -6,7 +6,7 @@ import { AxiosResponse } from "axios";
 import { AxiosUserApi } from "../../utils/AxiosApis";
 
 const Navbar = () => {
-  const context = useContext(myContext);
+  const userIsLoggedIn = useContext(myContext);
 
   const logout = () => {
     AxiosUserApi.get("logout",  {
@@ -25,7 +25,7 @@ const Navbar = () => {
 
       <NavigationMenu>
         <NavigationLink to="/">Home</NavigationLink>
-        {context ? (
+        {userIsLoggedIn ? (
           <>
             <NavigationLink to="/form" className="nav-link">
               Form
