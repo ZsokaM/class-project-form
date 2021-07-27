@@ -9,7 +9,7 @@ export default function Login() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const login = (event:any) => {
+  const login = (event:React.SyntheticEvent) => {
     event.preventDefault();
     AxiosUserApi.post(
         "login",
