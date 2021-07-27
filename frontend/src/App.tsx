@@ -11,10 +11,10 @@ import Form from "./Pages/ComplaintForm";
 import CardOverview from "./Pages/ComplaintOverview";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
-import { myContext } from "./components/Context";
+import { userContext } from "./components/Context";
 
 function App() {
-  const context = useContext(myContext);
+  const context = useContext(userContext);
   const [theme, setTheme] = useState<string>("light");
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
